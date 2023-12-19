@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="YurtOtomasyonModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="tblKullanici">
+    <Key>
+      <PropertyRef Name="KullaniciID" />
+    </Key>
+    <Property Name="KullaniciID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KullaniciAd" Type="nchar" MaxLength="10" />
+    <Property Name="KullaniciSoyad" Type="nchar" MaxLength="10" />
+    <Property Name="KullaniciTel" Type="char" MaxLength="11" />
+    <Property Name="KullaniciMail" Type="nvarchar" MaxLength="50" />
+    <Property Name="KullaniciDYili" Type="int" />
+    <Property Name="KullaniciTC" Type="char" MaxLength="11" />
+    <Property Name="KullaniciSifre" Type="nvarchar" MaxLength="20" />
+    <Property Name="RolID" Type="int" />
+  </EntityType>
+  <EntityType Name="tblOda">
+    <Key>
+      <PropertyRef Name="OdaID" />
+    </Key>
+    <Property Name="OdaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OdaKapasite" Type="int" />
+    <Property Name="OdaAktiflik" Type="bit" />
+    <Property Name="OdaNo" Type="int" />
+    <Property Name="OdaMevcutKisi" Type="int" />
+  </EntityType>
+  <EntityType Name="tblOgrenci">
+    <Key>
+      <PropertyRef Name="ogrenciID" />
+    </Key>
+    <Property Name="ogrenciID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OgrenciAd" Type="nvarchar" MaxLength="50" />
+    <Property Name="OgrenciSoyad" Type="nvarchar" MaxLength="50" />
+    <Property Name="OgrenciTC" Type="char" MaxLength="11" />
+    <Property Name="OgrenciSifre" Type="varchar" MaxLength="10" />
+    <Property Name="OgrenciTelefon" Type="varchar" MaxLength="15" />
+    <Property Name="OgrenciCinsiyet" Type="varchar" MaxLength="5" />
+    <Property Name="OgrenciOdaID" Type="int" />
+    <Property Name="OgrenciMail" Type="nvarchar" MaxLength="30" />
+    <Property Name="OgrenciKalanBorc" Type="int" />
+    <Property Name="OgrenciVeliTel" Type="varchar" MaxLength="15" />
+    <Property Name="OgrenciVeliAd" Type="nvarchar" MaxLength="20" />
+    <Property Name="OgrenciVeliSoyad" Type="nvarchar" MaxLength="50" />
+    <Property Name="OgrenciDYılı" Type="int" />
+  </EntityType>
+  <EntityType Name="tblPersonel">
+    <Key>
+      <PropertyRef Name="PersonelID" />
+    </Key>
+    <Property Name="PersonelID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PersonelAd" Type="nchar" MaxLength="10" />
+    <Property Name="PersonelSoyad" Type="nchar" MaxLength="20" />
+    <Property Name="PersonelTC" Type="char" MaxLength="11" />
+    <Property Name="PersonelSifre" Type="nchar" MaxLength="10" />
+    <Property Name="PersonelCinsiyet" Type="char" MaxLength="5" />
+    <Property Name="RolID" Type="int" />
+    <Property Name="PersonelMaas" Type="int" />
+    <Property Name="PersonelTelefon" Type="varchar" MaxLength="20" />
+    <Property Name="PersonelAdres" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="tblRol">
+    <Key>
+      <PropertyRef Name="RolID" />
+    </Key>
+    <Property Name="RolID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RollAd" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <Association Name="FK_tblOgrenci_tblOda">
+    <End Role="tblOda" Type="Self.tblOda" Multiplicity="0..1" />
+    <End Role="tblOgrenci" Type="Self.tblOgrenci" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblOda">
+        <PropertyRef Name="OdaID" />
+      </Principal>
+      <Dependent Role="tblOgrenci">
+        <PropertyRef Name="OgrenciOdaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="YurtOtomasyonModelStoreContainer">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblKullanici" EntityType="Self.tblKullanici" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblOda" EntityType="Self.tblOda" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblOgrenci" EntityType="Self.tblOgrenci" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblPersonel" EntityType="Self.tblPersonel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblRol" EntityType="Self.tblRol" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_tblOgrenci_tblOda" Association="Self.FK_tblOgrenci_tblOda">
+      <End Role="tblOda" EntitySet="tblOda" />
+      <End Role="tblOgrenci" EntitySet="tblOgrenci" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

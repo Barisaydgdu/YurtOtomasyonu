@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cb54098a032843e79cc2ae7af051e487" Name="Diagram1">
+        <EntityTypeShape EntityType="YurtOtomasyonModel.tblOgrenci" Width="1.5" PointX="4.875" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="YurtOtomasyonModel.tblPersonel" Width="1.5" PointX="2.875" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="YurtOtomasyonModel.tblRol" Width="1.5" PointX="0.75" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="YurtOtomasyonModel.sysdiagrams" Width="1.5" PointX="9.875" PointY="0.5" />
+        <EntityTypeShape EntityType="YurtOtomasyonModel.tblOda" Width="1.5" PointX="6.75" PointY="0.5" />
+        <AssociationConnector Association="YurtOtomasyonModel.FK_tblOgrenci_tblOda" />
+        <EntityTypeShape EntityType="YurtOtomasyonModel.tblKullanici" Width="1.5" PointX="0.875" PointY="2.625" />
+        <AssociationConnector Association="YurtOtomasyonModel.FK_tblKullanici_tblRol" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
