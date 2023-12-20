@@ -10,14 +10,11 @@
     <Property Name="OgrenciTC" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
     <Property Name="OgrenciSifre" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="OgrenciTelefon" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-    <Property Name="OgrenciCinsiyet" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
     <Property Name="OgrenciOdaID" Type="Int32" />
     <Property Name="OgrenciMail" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-    <Property Name="OgrenciKalanBorc" Type="Int32" />
     <Property Name="OgrenciVeliTel" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
     <Property Name="OgrenciVeliAd" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Name="OgrenciVeliSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="tblOda" Relationship="YurtOtomasyonModel.FK_tblOgrenci_tblOda" FromRole="tblOgrenci" ToRole="tblOda" />
     <Property Name="OgrenciDYılı" Type="Int32" />
   </EntityType>
   <EntityType Name="tblPersonel">
@@ -49,13 +46,13 @@
     <EntitySet Name="tblRol" EntityType="Self.tblRol" />
     <EntitySet Name="sysdiagrams" EntityType="YurtOtomasyonModel.sysdiagrams" />
     <EntitySet Name="tblOda" EntityType="YurtOtomasyonModel.tblOda" />
-    <AssociationSet Name="FK_tblOgrenci_tblOda" Association="YurtOtomasyonModel.FK_tblOgrenci_tblOda">
-      <End Role="tblOda" EntitySet="tblOda" />
-      <End Role="tblOgrenci" EntitySet="tblOgrenci" />
-    </AssociationSet>
     <EntitySet Name="tblKullanici" EntityType="YurtOtomasyonModel.tblKullanici" />
     <AssociationSet Name="FK_tblKullanici_tblRol" Association="YurtOtomasyonModel.FK_tblKullanici_tblRol">
       <End Role="tblRol" EntitySet="tblRol" />
+      <End Role="tblKullanici" EntitySet="tblKullanici" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblKullanici_tblOda" Association="YurtOtomasyonModel.FK_tblKullanici_tblOda">
+      <End Role="tblOda" EntitySet="tblOda" />
       <End Role="tblKullanici" EntitySet="tblKullanici" />
     </AssociationSet>
   </EntityContainer>
@@ -78,20 +75,8 @@
     <Property Name="OdaAktiflik" Type="Boolean" />
     <Property Name="OdaNo" Type="Int32" />
     <Property Name="OdaMevcutKisi" Type="Int32" />
-    <NavigationProperty Name="tblOgrenci" Relationship="YurtOtomasyonModel.FK_tblOgrenci_tblOda" FromRole="tblOda" ToRole="tblOgrenci" />
+    <NavigationProperty Name="tblKullanici" Relationship="YurtOtomasyonModel.FK_tblKullanici_tblOda" FromRole="tblOda" ToRole="tblKullanici" />
   </EntityType>
-  <Association Name="FK_tblOgrenci_tblOda">
-    <End Type="YurtOtomasyonModel.tblOda" Role="tblOda" Multiplicity="0..1" />
-    <End Type="YurtOtomasyonModel.tblOgrenci" Role="tblOgrenci" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tblOda">
-        <PropertyRef Name="OdaID" />
-      </Principal>
-      <Dependent Role="tblOgrenci">
-        <PropertyRef Name="OgrenciOdaID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityType Name="tblKullanici">
     <Key>
       <PropertyRef Name="KullaniciID" />
@@ -106,6 +91,8 @@
     <Property Name="KullaniciSifre" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Name="RolID" Type="Int32" />
     <NavigationProperty Name="tblRol" Relationship="YurtOtomasyonModel.FK_tblKullanici_tblRol" FromRole="tblKullanici" ToRole="tblRol" />
+    <Property Name="OdaID" Type="Int32" />
+    <NavigationProperty Name="tblOda" Relationship="YurtOtomasyonModel.FK_tblKullanici_tblOda" FromRole="tblKullanici" ToRole="tblOda" />
   </EntityType>
   <Association Name="FK_tblKullanici_tblRol">
     <End Type="YurtOtomasyonModel.tblRol" Role="tblRol" Multiplicity="0..1" />
@@ -116,6 +103,18 @@
       </Principal>
       <Dependent Role="tblKullanici">
         <PropertyRef Name="RolID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblKullanici_tblOda">
+    <End Type="YurtOtomasyonModel.tblOda" Role="tblOda" Multiplicity="0..1" />
+    <End Type="YurtOtomasyonModel.tblKullanici" Role="tblKullanici" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblOda">
+        <PropertyRef Name="OdaID" />
+      </Principal>
+      <Dependent Role="tblKullanici">
+        <PropertyRef Name="OdaID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

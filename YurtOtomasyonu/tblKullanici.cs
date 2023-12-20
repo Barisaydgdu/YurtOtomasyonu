@@ -23,7 +23,9 @@ namespace YurtOtomasyonu
         public string KullaniciTC { get; set; }
         public string KullaniciSifre { get; set; }
         public Nullable<int> RolID { get; set; }
+        public Nullable<int> OdaID { get; set; }
     
         public virtual tblRol tblRol { get; set; }
+        public virtual tblOda tblOda { get; set; }
     }
 }

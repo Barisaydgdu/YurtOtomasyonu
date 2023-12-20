@@ -111,6 +111,7 @@
             this.odaBilgisiToolStripMenuItem2.Name = "odaBilgisiToolStripMenuItem2";
             this.odaBilgisiToolStripMenuItem2.Size = new System.Drawing.Size(95, 24);
             this.odaBilgisiToolStripMenuItem2.Text = "Oda Bilgisi";
+            this.odaBilgisiToolStripMenuItem2.Click += new System.EventHandler(this.odaBilgisiToolStripMenuItem2_Click);
             // 
             // mnYetkili
             // 
@@ -155,6 +156,7 @@
             this.odaBilgisiToolStripMenuItem.Name = "odaBilgisiToolStripMenuItem";
             this.odaBilgisiToolStripMenuItem.Size = new System.Drawing.Size(95, 24);
             this.odaBilgisiToolStripMenuItem.Text = "Oda Bilgisi";
+            this.odaBilgisiToolStripMenuItem.Click += new System.EventHandler(this.odaBilgisiToolStripMenuItem_Click);
             // 
             // yetkiliSayfasıToolStripMenuItem1
             // 

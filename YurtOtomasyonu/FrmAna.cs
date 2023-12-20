@@ -72,5 +72,19 @@ namespace YurtOtomasyonu
             frmOgrEkle.MdiParent = this;
             frmOgrEkle.Show();
         }
+
+        private void odaBilgisiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmOdaBilgileri frmOda = new FrmOdaBilgileri();
+            frmOda.MdiParent = this;
+            frmOda.Show();
+        }
+
+        private void odaBilgisiToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            FrmOdaBilgileri frmOda = new FrmOdaBilgileri();
+            frmOda.MdiParent = this;
+            frmOda.Show();
+        }
     }
 }

@@ -11,10 +11,8 @@
           <ScalarProperty Name="OgrenciTC" ColumnName="OgrenciTC" />
           <ScalarProperty Name="OgrenciSifre" ColumnName="OgrenciSifre" />
           <ScalarProperty Name="OgrenciTelefon" ColumnName="OgrenciTelefon" />
-          <ScalarProperty Name="OgrenciCinsiyet" ColumnName="OgrenciCinsiyet" />
           <ScalarProperty Name="OgrenciOdaID" ColumnName="OgrenciOdaID" />
           <ScalarProperty Name="OgrenciMail" ColumnName="OgrenciMail" />
-          <ScalarProperty Name="OgrenciKalanBorc" ColumnName="OgrenciKalanBorc" />
           <ScalarProperty Name="OgrenciVeliTel" ColumnName="OgrenciVeliTel" />
           <ScalarProperty Name="OgrenciVeliAd" ColumnName="OgrenciVeliAd" />
           <ScalarProperty Name="OgrenciVeliSoyad" ColumnName="OgrenciVeliSoyad" />
@@ -70,6 +68,7 @@
     <EntitySetMapping Name="tblKullanici">
       <EntityTypeMapping TypeName="YurtOtomasyonModel.tblKullanici">
         <MappingFragment StoreEntitySet="tblKullanici">
+          <ScalarProperty Name="OdaID" ColumnName="OdaID" />
           <ScalarProperty Name="RolID" ColumnName="RolID" />
           <ScalarProperty Name="KullaniciSifre" ColumnName="KullaniciSifre" />
           <ScalarProperty Name="KullaniciTC" ColumnName="KullaniciTC" />

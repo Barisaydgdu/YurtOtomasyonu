@@ -20,15 +20,11 @@ namespace YurtOtomasyonu
         public string OgrenciTC { get; set; }
         public string OgrenciSifre { get; set; }
         public string OgrenciTelefon { get; set; }
-        public string OgrenciCinsiyet { get; set; }
         public Nullable<int> OgrenciOdaID { get; set; }
         public string OgrenciMail { get; set; }
-        public Nullable<int> OgrenciKalanBorc { get; set; }
         public string OgrenciVeliTel { get; set; }
         public string OgrenciVeliAd { get; set; }
         public string OgrenciVeliSoyad { get; set; }
         public Nullable<int> OgrenciDYılı { get; set; }
-    
-        public virtual tblOda tblOda { get; set; }
     }
 }

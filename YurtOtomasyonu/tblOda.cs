@@ -17,7 +17,7 @@ namespace YurtOtomasyonu
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tblOda()
         {
-            this.tblOgrenci = new HashSet<tblOgrenci>();
+            this.tblKullanici = new HashSet<tblKullanici>();
         }
     
         public int OdaID { get; set; }
@@ -27,6 +27,6 @@ namespace YurtOtomasyonu
         public Nullable<int> OdaMevcutKisi { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblOgrenci> tblOgrenci { get; set; }
+        public virtual ICollection<tblKullanici> tblKullanici { get; set; }
     }
 }

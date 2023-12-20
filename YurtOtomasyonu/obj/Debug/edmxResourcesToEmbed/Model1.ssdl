@@ -23,6 +23,7 @@
     <Property Name="KullaniciTC" Type="char" MaxLength="11" />
     <Property Name="KullaniciSifre" Type="nvarchar" MaxLength="20" />
     <Property Name="RolID" Type="int" />
+    <Property Name="OdaID" Type="int" />
   </EntityType>
   <EntityType Name="tblOda">
     <Key>
@@ -44,10 +45,8 @@
     <Property Name="OgrenciTC" Type="char" MaxLength="11" />
     <Property Name="OgrenciSifre" Type="varchar" MaxLength="10" />
     <Property Name="OgrenciTelefon" Type="varchar" MaxLength="15" />
-    <Property Name="OgrenciCinsiyet" Type="varchar" MaxLength="5" />
     <Property Name="OgrenciOdaID" Type="int" />
     <Property Name="OgrenciMail" Type="nvarchar" MaxLength="30" />
-    <Property Name="OgrenciKalanBorc" Type="int" />
     <Property Name="OgrenciVeliTel" Type="varchar" MaxLength="15" />
     <Property Name="OgrenciVeliAd" Type="nvarchar" MaxLength="20" />
     <Property Name="OgrenciVeliSoyad" Type="nvarchar" MaxLength="50" />
@@ -75,15 +74,27 @@
     <Property Name="RolID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="RollAd" Type="nchar" MaxLength="10" />
   </EntityType>
-  <Association Name="FK_tblOgrenci_tblOda">
+  <Association Name="FK_tblKullanici_tblOda">
     <End Role="tblOda" Type="Self.tblOda" Multiplicity="0..1" />
-    <End Role="tblOgrenci" Type="Self.tblOgrenci" Multiplicity="*" />
+    <End Role="tblKullanici" Type="Self.tblKullanici" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tblOda">
         <PropertyRef Name="OdaID" />
       </Principal>
-      <Dependent Role="tblOgrenci">
-        <PropertyRef Name="OgrenciOdaID" />
+      <Dependent Role="tblKullanici">
+        <PropertyRef Name="OdaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblKullanici_tblRol">
+    <End Role="tblRol" Type="Self.tblRol" Multiplicity="0..1" />
+    <End Role="tblKullanici" Type="Self.tblKullanici" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblRol">
+        <PropertyRef Name="RolID" />
+      </Principal>
+      <Dependent Role="tblKullanici">
+        <PropertyRef Name="RolID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -94,9 +105,13 @@
     <EntitySet Name="tblOgrenci" EntityType="Self.tblOgrenci" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblPersonel" EntityType="Self.tblPersonel" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblRol" EntityType="Self.tblRol" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK_tblOgrenci_tblOda" Association="Self.FK_tblOgrenci_tblOda">
+    <AssociationSet Name="FK_tblKullanici_tblOda" Association="Self.FK_tblKullanici_tblOda">
       <End Role="tblOda" EntitySet="tblOda" />
-      <End Role="tblOgrenci" EntitySet="tblOgrenci" />
+      <End Role="tblKullanici" EntitySet="tblKullanici" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblKullanici_tblRol" Association="Self.FK_tblKullanici_tblRol">
+      <End Role="tblRol" EntitySet="tblRol" />
+      <End Role="tblKullanici" EntitySet="tblKullanici" />
     </AssociationSet>
   </EntityContainer>
 </Schema>
