@@ -27,6 +27,7 @@ namespace YurtOtomasyonu
         {
             // TODO: This line of code loads data into the 'yurtOtomasyonDataSet.tblOda' table. You can move, or remove it, as needed.
             this.tblOdaTableAdapter.Fill(this.yurtOtomasyonDataSet.tblOda);
+
             lblKacBos.Text = db.tblOda.Count(p => p.OdaMevcutKisi == 0).ToString();
             label2.Text = db.tblOda.Count().ToString();
             
@@ -38,26 +39,64 @@ namespace YurtOtomasyonu
             {
                 int odaNO = Convert.ToInt32(txtOgrOdaNo.Text);
                 string guncellenecekTC = mtbOgrEkleTC.Text;
+
+                
                 tblKullanici SwapRoom = db.tblKullanici.FirstOrDefault(p => p.KullaniciTC == guncellenecekTC);
-                SwapRoom.OdaID = Convert.ToInt32(txtOgrOdaNo.Text);
-                int sonuc = db.SaveChanges();
-                if ( sonuc > 0 ) 
+
+                if (SwapRoom != null)
                 {
-                    lblOdaUyari.Text = "İşlem Başarılı! "; 
                     
-                } 
-                else 
-                {
-                    lblOdaUyari.Text = "İşlem Başarısız!"; 
+                    int eskiOdaID = SwapRoom.OdaID ?? 0; // ?? operatorü, OdaID null ise 0 olarak kabul eder.
+
+                    
+                    int yeniOdaID = Convert.ToInt32(txtOgrOdaNo.Text);
+
+                   
+                    SwapRoom.OdaID = yeniOdaID;
+
+                    
+                    if (eskiOdaID > 0)
+                    {
+                        tblOda eskiOda = db.tblOda.FirstOrDefault(o => o.OdaID == eskiOdaID);
+                        if (eskiOda != null && eskiOda.OdaMevcutKisi > 0)
+                        {
+                            eskiOda.OdaMevcutKisi--;
+                        }
+                    }
+
+                    
+                    tblOda yeniOda = db.tblOda.FirstOrDefault(o => o.OdaID == yeniOdaID);
+                    if (yeniOda != null)
+                    {
+                        yeniOda.OdaMevcutKisi++;
+                    }
+
+                    
+                    int kayitSonuc = db.SaveChanges();
+
+                    if (kayitSonuc > 0)
+                    {
+                        lblOdaUyari.Text = "İşlem Başarılı!";
+                        RefreshDataGridView();
+                    }
+                    else
+                    {
+                        lblOdaUyari.Text = "İşlem Başarısız!";
+                    }
                 }
-               
-
+                else
+                {
+                    lblOdaUyari.Text = "Öğrenci bulunamadı.";
+                }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                lblOdaUyari.Text = "Hata oluştu: " + ex.Message;
             }
+        }
+        private void RefreshDataGridView()
+        {
+            dataGridView1.DataSource = db.tblOda.ToList();
         }
     }
 }

@@ -42,6 +42,7 @@
             this.personelEkleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.odaBilgisiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.yetkiliSayfasıToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.raporlarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnOgrenci.SuspendLayout();
             this.mnPersonel.SuspendLayout();
             this.mnYetkili.SuspendLayout();
@@ -120,7 +121,8 @@
             this.yetkiliSayfasıToolStripMenuItem,
             this.personelEkleToolStripMenuItem,
             this.odaBilgisiToolStripMenuItem,
-            this.yetkiliSayfasıToolStripMenuItem1});
+            this.yetkiliSayfasıToolStripMenuItem1,
+            this.raporlarToolStripMenuItem});
             this.mnYetkili.Location = new System.Drawing.Point(0, 0);
             this.mnYetkili.Name = "mnYetkili";
             this.mnYetkili.Padding = new System.Windows.Forms.Padding(14, 3, 0, 3);
@@ -163,6 +165,13 @@
             this.yetkiliSayfasıToolStripMenuItem1.Name = "yetkiliSayfasıToolStripMenuItem1";
             this.yetkiliSayfasıToolStripMenuItem1.Size = new System.Drawing.Size(110, 24);
             this.yetkiliSayfasıToolStripMenuItem1.Text = "yetkili sayfası";
+            // 
+            // raporlarToolStripMenuItem
+            // 
+            this.raporlarToolStripMenuItem.Name = "raporlarToolStripMenuItem";
+            this.raporlarToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
+            this.raporlarToolStripMenuItem.Text = "Raporlar";
+            this.raporlarToolStripMenuItem.Click += new System.EventHandler(this.raporlarToolStripMenuItem_Click);
             // 
             // FrmAna
             // 
@@ -209,5 +218,6 @@
         private System.Windows.Forms.ToolStripMenuItem ödemeSayfasıToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem öğrenciEkleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem odaBilgisiToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem raporlarToolStripMenuItem;
     }
 }

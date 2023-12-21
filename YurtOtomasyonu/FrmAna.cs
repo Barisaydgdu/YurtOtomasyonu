@@ -86,5 +86,12 @@ namespace YurtOtomasyonu
             frmOda.MdiParent = this;
             frmOda.Show();
         }
+
+        private void raporlarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmFormGöster frmFormGöster = new FrmFormGöster();
+            frmFormGöster.MdiParent = this;
+            frmFormGöster.Show();
+        }
     }
 }
