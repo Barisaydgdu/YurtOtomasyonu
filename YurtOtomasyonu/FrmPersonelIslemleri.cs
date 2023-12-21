@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using YurtOtomasyonu.ServiceReference1;
 
 namespace YurtOtomasyonu
 {
@@ -32,34 +33,57 @@ namespace YurtOtomasyonu
             using (YurtOtomasyonEntities db = new YurtOtomasyonEntities())
             {
                 var transaction =  db.Database.BeginTransaction();
-                try
-                {
-                    tblKullanici user = new tblKullanici();
 
-                    user.KullaniciAd = txtUserAd.Text;
-                    user.KullaniciSoyad = txtUserSoyad.Text;
-                    user.KullaniciTC = mtbUserTC.Text;
-                    user.KullaniciMail = mtbUserMail.Text;
-                    user.KullaniciTel = txtUserTel.Text;
-                    user.KullaniciSifre = txtUserSifre.Text;
-                    user.RolID = Convert.ToInt16(txtUserRol.Text);
-                    db.tblKullanici.Add(user);
-                    int sonuc = db.SaveChanges();
-                    if (sonuc > 0)
+                long TCNO = Convert.ToInt64(mtbUserTC.Text);
+                int dYili = Convert.ToInt32(txtUserDY.Text);
+                string ad = txtUserAd.Text.ToUpper();
+                string soyad = txtUserSoyad.Text.ToUpper();
+                KPSPublicSoapClient dogrulama = new KPSPublicSoapClient();
+                bool gercek = dogrulama.TCKimlikNoDogrula(TCNO, ad,soyad,dYili);
+
+                if (gercek == true)
+                {
+                    try
                     {
-                        transaction.Commit();
-                        MessageBox.Show("Kayıt Yapıldı");
-                        db.SaveChanges();
+                        tblKullanici user = new tblKullanici();
+
+                        user.KullaniciAd = txtUserAd.Text;
+                        user.KullaniciSoyad = txtUserSoyad.Text;
+                        user.KullaniciTC = mtbUserTC.Text;
+                        user.KullaniciMail = mtbUserMail.Text;
+                        user.KullaniciTel = txtUserTel.Text;
+                        user.KullaniciSifre = txtUserSifre.Text;
+                        user.KullaniciDYili = Convert.ToInt32(txtUserDY.Text) ;
+                        user.RolID = Convert.ToInt16(txtUserRol.Text);
+                        db.tblKullanici.Add(user);
+                        int sonuc = db.SaveChanges();
+                        if (sonuc > 0)
+                        {
+                            transaction.Commit();
+                            MessageBox.Show("Kayıt Yapıldı");
+                            db.SaveChanges();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+                        MessageBox.Show("Kayıt Yapılamadı.");
+
                     }
                 }
-                catch (Exception ex)
+                else
                 {
-                    transaction.Rollback();
-                    MessageBox.Show("Kayıt Yapılamadı.");
-
+                    MessageBox.Show("Doğrulama Başarısız!");
                 }
+
+                
             }
 
-        }               
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

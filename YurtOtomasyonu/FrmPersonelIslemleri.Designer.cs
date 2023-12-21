@@ -30,23 +30,25 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPersonelIslemleri));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtUserRol = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtUserSifre = new System.Windows.Forms.TextBox();
+            this.lblUserSifre = new System.Windows.Forms.Label();
+            this.btnPKaydet = new System.Windows.Forms.Button();
             this.txtUserAd = new System.Windows.Forms.TextBox();
             this.lblSoyad = new System.Windows.Forms.Label();
             this.lblAd = new System.Windows.Forms.Label();
             this.mtbUserMail = new System.Windows.Forms.MaskedTextBox();
             this.lblMail = new System.Windows.Forms.Label();
+            this.txtUserTel = new System.Windows.Forms.TextBox();
             this.txtUserSoyad = new System.Windows.Forms.MaskedTextBox();
+            this.lblPTel = new System.Windows.Forms.Label();
             this.mtbUserTC = new System.Windows.Forms.MaskedTextBox();
             this.lblTC = new System.Windows.Forms.Label();
-            this.btnPKaydet = new System.Windows.Forms.Button();
-            this.txtUserTel = new System.Windows.Forms.TextBox();
-            this.lblPTel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.txtUserSifre = new System.Windows.Forms.TextBox();
-            this.lblUserSifre = new System.Windows.Forms.Label();
-            this.txtUserRol = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.txtUserDY = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -54,6 +56,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtUserDY);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtUserRol);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtUserSifre);
@@ -69,17 +73,59 @@
             this.groupBox1.Controls.Add(this.lblPTel);
             this.groupBox1.Controls.Add(this.mtbUserTC);
             this.groupBox1.Controls.Add(this.lblTC);
-            this.groupBox1.Location = new System.Drawing.Point(280, 12);
+            this.groupBox1.Location = new System.Drawing.Point(281, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(391, 412);
+            this.groupBox1.Size = new System.Drawing.Size(390, 477);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Kullanıcı Kayıt";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // txtUserRol
+            // 
+            this.txtUserRol.Location = new System.Drawing.Point(184, 336);
+            this.txtUserRol.Name = "txtUserRol";
+            this.txtUserRol.Size = new System.Drawing.Size(193, 34);
+            this.txtUserRol.TabIndex = 18;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(88, 339);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(92, 25);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "YETKİ:";
+            // 
+            // txtUserSifre
+            // 
+            this.txtUserSifre.Location = new System.Drawing.Point(184, 293);
+            this.txtUserSifre.Name = "txtUserSifre";
+            this.txtUserSifre.Size = new System.Drawing.Size(193, 34);
+            this.txtUserSifre.TabIndex = 16;
+            // 
+            // lblUserSifre
+            // 
+            this.lblUserSifre.AutoSize = true;
+            this.lblUserSifre.Location = new System.Drawing.Point(91, 296);
+            this.lblUserSifre.Name = "lblUserSifre";
+            this.lblUserSifre.Size = new System.Drawing.Size(89, 25);
+            this.lblUserSifre.TabIndex = 15;
+            this.lblUserSifre.Text = "ŞİFRE:";
+            // 
+            // btnPKaydet
+            // 
+            this.btnPKaydet.Location = new System.Drawing.Point(217, 436);
+            this.btnPKaydet.Name = "btnPKaydet";
+            this.btnPKaydet.Size = new System.Drawing.Size(144, 35);
+            this.btnPKaydet.TabIndex = 14;
+            this.btnPKaydet.Text = "KAYDET";
+            this.btnPKaydet.UseVisualStyleBackColor = true;
+            this.btnPKaydet.Click += new System.EventHandler(this.btnPKaydet_Click);
+            // 
             // txtUserAd
             // 
-            this.txtUserAd.Location = new System.Drawing.Point(168, 73);
+            this.txtUserAd.Location = new System.Drawing.Point(185, 73);
             this.txtUserAd.Name = "txtUserAd";
             this.txtUserAd.Size = new System.Drawing.Size(193, 34);
             this.txtUserAd.TabIndex = 8;
@@ -87,7 +133,7 @@
             // lblSoyad
             // 
             this.lblSoyad.AutoSize = true;
-            this.lblSoyad.Location = new System.Drawing.Point(65, 125);
+            this.lblSoyad.Location = new System.Drawing.Point(84, 125);
             this.lblSoyad.Name = "lblSoyad";
             this.lblSoyad.Size = new System.Drawing.Size(97, 25);
             this.lblSoyad.TabIndex = 7;
@@ -96,7 +142,7 @@
             // lblAd
             // 
             this.lblAd.AutoSize = true;
-            this.lblAd.Location = new System.Drawing.Point(109, 76);
+            this.lblAd.Location = new System.Drawing.Point(128, 76);
             this.lblAd.Name = "lblAd";
             this.lblAd.Size = new System.Drawing.Size(53, 25);
             this.lblAd.TabIndex = 6;
@@ -104,7 +150,7 @@
             // 
             // mtbUserMail
             // 
-            this.mtbUserMail.Location = new System.Drawing.Point(168, 227);
+            this.mtbUserMail.Location = new System.Drawing.Point(184, 250);
             this.mtbUserMail.Name = "mtbUserMail";
             this.mtbUserMail.Size = new System.Drawing.Size(193, 34);
             this.mtbUserMail.TabIndex = 5;
@@ -112,22 +158,38 @@
             // lblMail
             // 
             this.lblMail.AutoSize = true;
-            this.lblMail.Location = new System.Drawing.Point(79, 236);
+            this.lblMail.Location = new System.Drawing.Point(97, 259);
             this.lblMail.Name = "lblMail";
             this.lblMail.Size = new System.Drawing.Size(83, 25);
             this.lblMail.TabIndex = 4;
             this.lblMail.Text = "MAİL:";
             // 
+            // txtUserTel
+            // 
+            this.txtUserTel.Location = new System.Drawing.Point(184, 210);
+            this.txtUserTel.Name = "txtUserTel";
+            this.txtUserTel.Size = new System.Drawing.Size(193, 34);
+            this.txtUserTel.TabIndex = 11;
+            // 
             // txtUserSoyad
             // 
-            this.txtUserSoyad.Location = new System.Drawing.Point(168, 122);
+            this.txtUserSoyad.Location = new System.Drawing.Point(185, 122);
             this.txtUserSoyad.Name = "txtUserSoyad";
             this.txtUserSoyad.Size = new System.Drawing.Size(193, 34);
             this.txtUserSoyad.TabIndex = 3;
             // 
+            // lblPTel
+            // 
+            this.lblPTel.AutoSize = true;
+            this.lblPTel.Location = new System.Drawing.Point(50, 213);
+            this.lblPTel.Name = "lblPTel";
+            this.lblPTel.Size = new System.Drawing.Size(130, 25);
+            this.lblPTel.TabIndex = 10;
+            this.lblPTel.Text = "TELEFON:";
+            // 
             // mtbUserTC
             // 
-            this.mtbUserTC.Location = new System.Drawing.Point(168, 21);
+            this.mtbUserTC.Location = new System.Drawing.Point(185, 21);
             this.mtbUserTC.Mask = "00000000000";
             this.mtbUserTC.Name = "mtbUserTC";
             this.mtbUserTC.Size = new System.Drawing.Size(193, 34);
@@ -137,37 +199,11 @@
             // lblTC
             // 
             this.lblTC.AutoSize = true;
-            this.lblTC.Location = new System.Drawing.Point(69, 30);
+            this.lblTC.Location = new System.Drawing.Point(88, 30);
             this.lblTC.Name = "lblTC";
             this.lblTC.Size = new System.Drawing.Size(93, 25);
             this.lblTC.TabIndex = 0;
             this.lblTC.Text = "TC NO:";
-            // 
-            // btnPKaydet
-            // 
-            this.btnPKaydet.Location = new System.Drawing.Point(229, 371);
-            this.btnPKaydet.Name = "btnPKaydet";
-            this.btnPKaydet.Size = new System.Drawing.Size(144, 35);
-            this.btnPKaydet.TabIndex = 14;
-            this.btnPKaydet.Text = "KAYDET";
-            this.btnPKaydet.UseVisualStyleBackColor = true;
-            this.btnPKaydet.Click += new System.EventHandler(this.btnPKaydet_Click);
-            // 
-            // txtUserTel
-            // 
-            this.txtUserTel.Location = new System.Drawing.Point(168, 178);
-            this.txtUserTel.Name = "txtUserTel";
-            this.txtUserTel.Size = new System.Drawing.Size(193, 34);
-            this.txtUserTel.TabIndex = 11;
-            // 
-            // lblPTel
-            // 
-            this.lblPTel.AutoSize = true;
-            this.lblPTel.Location = new System.Drawing.Point(32, 181);
-            this.lblPTel.Name = "lblPTel";
-            this.lblPTel.Size = new System.Drawing.Size(130, 25);
-            this.lblPTel.TabIndex = 10;
-            this.lblPTel.Text = "TELEFON:";
             // 
             // pictureBox1
             // 
@@ -189,37 +225,22 @@
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
             // 
-            // txtUserSifre
+            // txtUserDY
             // 
-            this.txtUserSifre.Location = new System.Drawing.Point(168, 270);
-            this.txtUserSifre.Name = "txtUserSifre";
-            this.txtUserSifre.Size = new System.Drawing.Size(193, 34);
-            this.txtUserSifre.TabIndex = 16;
+            this.txtUserDY.Location = new System.Drawing.Point(184, 170);
+            this.txtUserDY.Name = "txtUserDY";
+            this.txtUserDY.Size = new System.Drawing.Size(193, 34);
+            this.txtUserDY.TabIndex = 20;
             // 
-            // lblUserSifre
+            // label2
             // 
-            this.lblUserSifre.AutoSize = true;
-            this.lblUserSifre.Location = new System.Drawing.Point(73, 273);
-            this.lblUserSifre.Name = "lblUserSifre";
-            this.lblUserSifre.Size = new System.Drawing.Size(89, 25);
-            this.lblUserSifre.TabIndex = 15;
-            this.lblUserSifre.Text = "ŞİFRE:";
-            // 
-            // txtUserRol
-            // 
-            this.txtUserRol.Location = new System.Drawing.Point(168, 313);
-            this.txtUserRol.Name = "txtUserRol";
-            this.txtUserRol.Size = new System.Drawing.Size(193, 34);
-            this.txtUserRol.TabIndex = 18;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(70, 316);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 25);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "YETKİ:";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(15, 173);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(166, 25);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "DOĞUM YILI:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // FrmPersonelIslemleri
             // 
@@ -262,5 +283,7 @@
         private System.Windows.Forms.Label lblUserSifre;
         private System.Windows.Forms.TextBox txtUserRol;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtUserDY;
+        private System.Windows.Forms.Label label2;
     }
 }

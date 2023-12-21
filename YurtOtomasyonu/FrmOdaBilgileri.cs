@@ -36,18 +36,21 @@ namespace YurtOtomasyonu
         {
             try
             {
-                // burası güncellenmeli -- Güncelleme Kısmında Hata Var. --
-                int guncellenecekOda = Convert.ToInt32(txtOgrOdaNo.Text );
-                tblKullanici guncellenekKisi = db.tblKullanici.FirstOrDefault(p => p.OdaID == guncellenecekOda);
-
-                if (guncellenekKisi != null)
+                int odaNO = Convert.ToInt32(txtOgrOdaNo.Text);
+                string guncellenecekTC = mtbOgrEkleTC.Text;
+                tblKullanici SwapRoom = db.tblKullanici.FirstOrDefault(p => p.KullaniciTC == guncellenecekTC);
+                SwapRoom.OdaID = Convert.ToInt32(txtOgrOdaNo.Text);
+                int sonuc = db.SaveChanges();
+                if ( sonuc > 0 ) 
                 {
-                    guncellenekKisi.OdaID = Convert.ToInt32(txtOgrOdaNo.Text);
-
-                    db.SaveChanges();
-
+                    lblOdaUyari.Text = "İşlem Başarılı! "; 
                     
+                } 
+                else 
+                {
+                    lblOdaUyari.Text = "İşlem Başarısız!"; 
                 }
+               
 
             }
             catch (Exception)

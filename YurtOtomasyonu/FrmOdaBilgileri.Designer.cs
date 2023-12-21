@@ -49,6 +49,7 @@
             this.btnPKaydet = new System.Windows.Forms.Button();
             this.mtbOgrEkleTC = new System.Windows.Forms.MaskedTextBox();
             this.lblTC = new System.Windows.Forms.Label();
+            this.lblOdaUyari = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblOdaBindingSource)).BeginInit();
@@ -175,6 +176,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.lblOdaUyari);
             this.groupBox2.Controls.Add(this.txtOgrOdaNo);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.btnPKaydet);
@@ -231,6 +233,14 @@
             this.lblTC.TabIndex = 0;
             this.lblTC.Text = "TC NO:";
             // 
+            // lblOdaUyari
+            // 
+            this.lblOdaUyari.AutoSize = true;
+            this.lblOdaUyari.Location = new System.Drawing.Point(212, 173);
+            this.lblOdaUyari.Name = "lblOdaUyari";
+            this.lblOdaUyari.Size = new System.Drawing.Size(0, 25);
+            this.lblOdaUyari.TabIndex = 19;
+            // 
             // FrmOdaBilgileri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 25F);
@@ -285,5 +295,6 @@
         private System.Windows.Forms.Button btnPKaydet;
         private System.Windows.Forms.MaskedTextBox mtbOgrEkleTC;
         private System.Windows.Forms.Label lblTC;
+        private System.Windows.Forms.Label lblOdaUyari;
     }
 }
