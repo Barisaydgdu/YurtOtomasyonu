@@ -19,10 +19,17 @@ namespace YurtOtomasyonu
 
         private void FrmFormGöster_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'yurtOtomasyonDataSet.tblOda' table. You can move, or remove it, as needed.
+            this.tblOdaTableAdapter.Fill(this.yurtOtomasyonDataSet.tblOda);
             // TODO: This line of code loads data into the 'yurtOtomasyonDataSet.tblKullanici' table. You can move, or remove it, as needed.
             this.tblKullaniciTableAdapter.Fill(this.yurtOtomasyonDataSet.tblKullanici);
 
             this.reportViewer1.RefreshReport();
+        }
+
+        private void reportViewer1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

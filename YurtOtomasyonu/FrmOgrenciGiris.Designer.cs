@@ -73,6 +73,7 @@
             this.txtKullaniciSifre.Name = "txtKullaniciSifre";
             this.txtKullaniciSifre.Size = new System.Drawing.Size(161, 34);
             this.txtKullaniciSifre.TabIndex = 4;
+            this.txtKullaniciSifre.UseSystemPasswordChar = true;
             // 
             // mtbKullaniciTC
             // 

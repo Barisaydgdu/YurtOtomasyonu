@@ -60,6 +60,9 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox2</rd:DefaultName>
+                      <Visibility>
+                        <Hidden>true</Hidden>
+                      </Visibility>
                       <Style>
                         <Border>
                           <Style>None</Style>

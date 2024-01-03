@@ -93,5 +93,19 @@ namespace YurtOtomasyonu
             frmFormGöster.MdiParent = this;
             frmFormGöster.Show();
         }
+
+        private void öğrenciListesiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmOgrenciListesi frmOgrenciListesi = new FrmOgrenciListesi();
+            frmOgrenciListesi.MdiParent = this;
+            frmOgrenciListesi.Show();
+        }
+
+        private void öğrenciLİstesiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmOgrenciListesi frmOgrenciListesi = new FrmOgrenciListesi();
+            frmOgrenciListesi.MdiParent = this;
+            frmOgrenciListesi.Show();
+        }
     }
 }

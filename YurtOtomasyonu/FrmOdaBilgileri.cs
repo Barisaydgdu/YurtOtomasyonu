@@ -40,48 +40,48 @@ namespace YurtOtomasyonu
                 int odaNO = Convert.ToInt32(txtOgrOdaNo.Text);
                 string guncellenecekTC = mtbOgrEkleTC.Text;
 
-                
                 tblKullanici SwapRoom = db.tblKullanici.FirstOrDefault(p => p.KullaniciTC == guncellenecekTC);
 
                 if (SwapRoom != null)
                 {
-                    
-                    int eskiOdaID = SwapRoom.OdaID ?? 0; // ?? operatorü, OdaID null ise 0 olarak kabul eder.
+                    int eskiOdaID = SwapRoom.OdaID ?? 0;
 
-                    
                     int yeniOdaID = Convert.ToInt32(txtOgrOdaNo.Text);
 
-                   
-                    SwapRoom.OdaID = yeniOdaID;
-
-                    
-                    if (eskiOdaID > 0)
-                    {
-                        tblOda eskiOda = db.tblOda.FirstOrDefault(o => o.OdaID == eskiOdaID);
-                        if (eskiOda != null && eskiOda.OdaMevcutKisi > 0)
-                        {
-                            eskiOda.OdaMevcutKisi--;
-                        }
-                    }
-
-                    
+                    // Odanın mevcut kapasitesini kontrol et
                     tblOda yeniOda = db.tblOda.FirstOrDefault(o => o.OdaID == yeniOdaID);
-                    if (yeniOda != null)
+                    if (yeniOda != null && yeniOda.OdaMevcutKisi < yeniOda.OdaKapasite)
                     {
+                        // Odanın mevcut kapasitesi dolu değilse devam et
+
+                        SwapRoom.OdaID = yeniOdaID;
+
+                        if (eskiOdaID > 0)
+                        {
+                            tblOda eskiOda = db.tblOda.FirstOrDefault(o => o.OdaID == eskiOdaID);
+                            if (eskiOda != null && eskiOda.OdaMevcutKisi > 0)
+                            {
+                                eskiOda.OdaMevcutKisi--;
+                            }
+                        }
+
                         yeniOda.OdaMevcutKisi++;
-                    }
 
-                    
-                    int kayitSonuc = db.SaveChanges();
+                        int kayitSonuc = db.SaveChanges();
 
-                    if (kayitSonuc > 0)
-                    {
-                        lblOdaUyari.Text = "İşlem Başarılı!";
-                        RefreshDataGridView();
+                        if (kayitSonuc > 0)
+                        {
+                            lblOdaUyari.Text = "İşlem Başarılı!";
+                            RefreshDataGridView();
+                        }
+                        else
+                        {
+                            lblOdaUyari.Text = "İşlem Başarısız!";
+                        }
                     }
                     else
                     {
-                        lblOdaUyari.Text = "İşlem Başarısız!";
+                        lblOdaUyari.Text = "Oda kapasitesi dolu. Başka bir oda seçiniz.";
                     }
                 }
                 else
@@ -94,6 +94,7 @@ namespace YurtOtomasyonu
                 lblOdaUyari.Text = "Hata oluştu: " + ex.Message;
             }
         }
+
         private void RefreshDataGridView()
         {
             dataGridView1.DataSource = db.tblOda.ToList();

@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="tblRolBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>231, 17</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -858,7 +861,7 @@
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAB4AAAAeACAYAAAAvokrGAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAA/7JJREFUeF7s/b2qJc26oIce96OctYxDGYuDoCnE9jYbytiwrOWUjH3MdhrKlSPr
+        DwAACw8BkvkDpQAA/7JJREFUeF7s/b2qJc26oIce96OctYxDGYuDoCnE9jYbytiwrOWUjH3MdhrKlSPr
         WIUMXcKGNuoKBPLLFLqDQugKuq1PYu+1uhGIBrFAdLPHeZ8YGePLOWbMOUZmRmRGZj4PPFRV1pz5n/Hz
         vhmR/6//5v/3/1VVVVVVVVVVVVVVVVVV1QNYXKiqqqqqqqqqqqqqqqqqqvuzuFBVVVVVVVVVVVVVVVVV
         VfdncaGqqqqqqqqqqqqqqqqqqu7P4kJVVVVVVVVVVVVVVVVVVd2fxYWqqqqqqqqqqqqqqqqqqro/iwtV
@@ -5391,4 +5394,10 @@
         SZLk8ewWkiRJkiRJkiRJkiSP5v/6v/z/F8pkuBImvKAAAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="yurtOtomasyonDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="tblRolTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>427, 17</value>
+  </metadata>
 </root>

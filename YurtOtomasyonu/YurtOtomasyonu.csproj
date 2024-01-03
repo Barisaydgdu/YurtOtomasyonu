@@ -67,6 +67,7 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -118,6 +119,12 @@
     </Compile>
     <Compile Include="FrmOgrenciGiris.Designer.cs">
       <DependentUpon>FrmOgrenciGiris.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmOgrenciListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOgrenciListesi.Designer.cs">
+      <DependentUpon>FrmOgrenciListesi.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmPersonelIslemleri.cs">
       <SubType>Form</SubType>
@@ -182,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmOgrenciGiris.resx">
       <DependentUpon>FrmOgrenciGiris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmOgrenciListesi.resx">
+      <DependentUpon>FrmOgrenciListesi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPersonelIslemleri.resx">
       <DependentUpon>FrmPersonelIslemleri.cs</DependentUpon>
