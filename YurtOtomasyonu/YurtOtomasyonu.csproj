@@ -108,6 +108,18 @@
     <Compile Include="FrmOdaBilgileri.Designer.cs">
       <DependentUpon>FrmOdaBilgileri.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmOdaRapor1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOdaRapor1.Designer.cs">
+      <DependentUpon>FrmOdaRapor1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmOdaRaporu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOdaRaporu.Designer.cs">
+      <DependentUpon>FrmOdaRaporu.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmOgrenciGiris.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +177,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>YurtOtomasyonDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="YurtOtomasyonDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>YurtOtomasyonDataSet2.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FrmAna.resx">
       <DependentUpon>FrmAna.cs</DependentUpon>
     </EmbeddedResource>
@@ -176,6 +193,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmOdaBilgileri.resx">
       <DependentUpon>FrmOdaBilgileri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmOdaRapor1.resx">
+      <DependentUpon>FrmOdaRapor1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmOdaRaporu.resx">
+      <DependentUpon>FrmOdaRaporu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmOgrenciGiris.resx">
       <DependentUpon>FrmOgrenciGiris.cs</DependentUpon>
@@ -193,6 +216,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Report2.rdlc" />
+    <EmbeddedResource Include="Report22.rdlc" />
     <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
@@ -235,6 +260,17 @@
     </None>
     <None Include="YurtOtomasyonDataSet1.xss">
       <DependentUpon>YurtOtomasyonDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="YurtOtomasyonDataSet2.xsc">
+      <DependentUpon>YurtOtomasyonDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="YurtOtomasyonDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>YurtOtomasyonDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="YurtOtomasyonDataSet2.xss">
+      <DependentUpon>YurtOtomasyonDataSet2.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

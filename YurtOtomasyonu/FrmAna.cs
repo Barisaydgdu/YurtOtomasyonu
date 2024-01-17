@@ -99,5 +99,12 @@ namespace YurtOtomasyonu
             frmKullanici.MdiParent = this;
             frmKullanici.Show();
         }
+
+        private void odaRaporlarıToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmOdaRaporu frmOdaRaporu = new FrmOdaRaporu();
+            frmOdaRaporu.MdiParent = this;
+            frmOdaRaporu.Show();
+        }
     }
 }

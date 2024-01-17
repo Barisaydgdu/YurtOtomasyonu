@@ -16,7 +16,7 @@ namespace YurtOtomasyonu
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmOgrenciGiris());
+            Application.Run(new FrmOdaRapor1());
         }
     }
 }

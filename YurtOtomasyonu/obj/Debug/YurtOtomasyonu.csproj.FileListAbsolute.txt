@@ -77,3 +77,5 @@ C:\Users\Barisaydgdu\source\repos\YurtOtomasyonu\YurtOtomasyonu\bin\Debug\zh-CHS
 C:\Users\Barisaydgdu\source\repos\YurtOtomasyonu\YurtOtomasyonu\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
 C:\Users\Barisaydgdu\source\repos\YurtOtomasyonu\YurtOtomasyonu\obj\Debug\YurtOtomasyonu.FrmOgrenciListesi.resources
 C:\Users\Barisaydgdu\source\repos\YurtOtomasyonu\YurtOtomasyonu\obj\Debug\YurtOtomasyonu.FrmKullaniciIslemleri.resources
+C:\Users\Barisaydgdu\source\repos\YurtOtomasyonu\YurtOtomasyonu\obj\Debug\YurtOtomasyonu.FrmOdaRaporu.resources
+C:\Users\Barisaydgdu\source\repos\YurtOtomasyonu\YurtOtomasyonu\obj\Debug\YurtOtomasyonu.FrmOdaRapor1.resources

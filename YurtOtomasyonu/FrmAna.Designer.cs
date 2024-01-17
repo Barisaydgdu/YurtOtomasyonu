@@ -41,6 +41,7 @@
             this.raporlarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnYetkili = new System.Windows.Forms.MenuStrip();
             this.öğrenciListesiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.odaRaporlarıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnOgrenci.SuspendLayout();
             this.mnPersonel.SuspendLayout();
             this.mnYetkili.SuspendLayout();
@@ -129,9 +130,11 @@
             // 
             // raporlarToolStripMenuItem
             // 
+            this.raporlarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.odaRaporlarıToolStripMenuItem});
             this.raporlarToolStripMenuItem.Name = "raporlarToolStripMenuItem";
-            this.raporlarToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
-            this.raporlarToolStripMenuItem.Text = "Raporlar";
+            this.raporlarToolStripMenuItem.Size = new System.Drawing.Size(144, 24);
+            this.raporlarToolStripMenuItem.Text = "Kullanıcı Raporları";
             this.raporlarToolStripMenuItem.Click += new System.EventHandler(this.raporlarToolStripMenuItem_Click);
             // 
             // mnYetkili
@@ -155,6 +158,13 @@
             this.öğrenciListesiToolStripMenuItem.Size = new System.Drawing.Size(119, 24);
             this.öğrenciListesiToolStripMenuItem.Text = "Öğrenci Listesi";
             this.öğrenciListesiToolStripMenuItem.Click += new System.EventHandler(this.öğrenciListesiToolStripMenuItem_Click);
+            // 
+            // odaRaporlarıToolStripMenuItem
+            // 
+            this.odaRaporlarıToolStripMenuItem.Name = "odaRaporlarıToolStripMenuItem";
+            this.odaRaporlarıToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.odaRaporlarıToolStripMenuItem.Text = "Oda Raporları";
+            this.odaRaporlarıToolStripMenuItem.Click += new System.EventHandler(this.odaRaporlarıToolStripMenuItem_Click);
             // 
             // FrmAna
             // 
@@ -200,5 +210,6 @@
         private System.Windows.Forms.MenuStrip mnYetkili;
         private System.Windows.Forms.ToolStripMenuItem öğrenciLİstesiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem öğrenciListesiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem odaRaporlarıToolStripMenuItem;
     }
 }
