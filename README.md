@@ -1,6 +1,9 @@
 YAPILAN İŞLEMLER ÖRNEK AMAÇLIDIR DAHA TAMAMLANMAMIŞTIR...
 
+
+
 --Giriş Ekranı--
+
 ![image](https://github.com/Barisaydgdu/YurtOtomasyonu/assets/117362383/6e2334a5-2d16-4665-981c-996dfa35a165)
 
 --Kullanıcı Ekleme--
