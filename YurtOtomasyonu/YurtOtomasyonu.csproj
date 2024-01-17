@@ -84,12 +84,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmAna.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,17 +96,17 @@
     <Compile Include="FrmFormGöster.Designer.cs">
       <DependentUpon>FrmFormGöster.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmKullaniciIslemleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmKullaniciIslemleri.Designer.cs">
+      <DependentUpon>FrmKullaniciIslemleri.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmOdaBilgileri.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmOdaBilgileri.Designer.cs">
       <DependentUpon>FrmOdaBilgileri.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmOgrenciEkleme.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmOgrenciEkleme.Designer.cs">
-      <DependentUpon>FrmOgrenciEkleme.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmOgrenciGiris.cs">
       <SubType>Form</SubType>
@@ -125,12 +119,6 @@
     </Compile>
     <Compile Include="FrmOgrenciListesi.Designer.cs">
       <DependentUpon>FrmOgrenciListesi.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmPersonelIslemleri.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmPersonelIslemleri.Designer.cs">
-      <DependentUpon>FrmPersonelIslemleri.cs</DependentUpon>
     </Compile>
     <Compile Include="Model1.Context.cs">
       <AutoGen>True</AutoGen>
@@ -172,29 +160,28 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>YurtOtomasyonDataSet.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="YurtOtomasyonDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>YurtOtomasyonDataSet1.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FrmAna.resx">
       <DependentUpon>FrmAna.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmFormGöster.resx">
       <DependentUpon>FrmFormGöster.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmKullaniciIslemleri.resx">
+      <DependentUpon>FrmKullaniciIslemleri.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmOdaBilgileri.resx">
       <DependentUpon>FrmOdaBilgileri.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmOgrenciEkleme.resx">
-      <DependentUpon>FrmOgrenciEkleme.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmOgrenciGiris.resx">
       <DependentUpon>FrmOgrenciGiris.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmOgrenciListesi.resx">
       <DependentUpon>FrmOgrenciListesi.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmPersonelIslemleri.resx">
-      <DependentUpon>FrmPersonelIslemleri.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -237,6 +224,17 @@
     </None>
     <None Include="YurtOtomasyonDataSet.xss">
       <DependentUpon>YurtOtomasyonDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="YurtOtomasyonDataSet1.xsc">
+      <DependentUpon>YurtOtomasyonDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="YurtOtomasyonDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>YurtOtomasyonDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="YurtOtomasyonDataSet1.xss">
+      <DependentUpon>YurtOtomasyonDataSet1.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

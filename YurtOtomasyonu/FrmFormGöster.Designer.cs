@@ -81,7 +81,7 @@
             this.chart1.DataSource = this.tblOdaBindingSource;
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(153, 283);
+            this.chart1.Location = new System.Drawing.Point(92, 161);
             this.chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
@@ -91,6 +91,7 @@
             this.chart1.Size = new System.Drawing.Size(682, 300);
             this.chart1.TabIndex = 1;
             this.chart1.Text = "chart1";
+            this.chart1.Click += new System.EventHandler(this.chart1_Click);
             // 
             // tblOdaBindingSource
             // 

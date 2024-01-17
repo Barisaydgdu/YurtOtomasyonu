@@ -40,38 +40,15 @@ namespace YurtOtomasyonu
 
         }
 
-        private void tsmOgrenciEkle_Click(object sender, EventArgs e)
-        {
-            FrmOgrenciEkleme ogrEkleme = new FrmOgrenciEkleme();
-            ogrEkleme.MdiParent = this; 
-            ogrEkleme.Show();
-        }
-
-        private void yetkiliSayfasıToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FrmOgrenciEkleme frmOgrEkle = new FrmOgrenciEkleme();
-            frmOgrEkle.MdiParent = this;
-            frmOgrEkle.Show();
-        }
+        
 
         private void FrmAna_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void personelEkleToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FrmPersonelIslemleri frmpersonelEkle = new FrmPersonelIslemleri();
-            frmpersonelEkle.MdiParent = this;
-            frmpersonelEkle.Show();
-        }
-
-        private void öğrenciEkleToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FrmOgrenciEkleme frmOgrEkle = new FrmOgrenciEkleme();
-            frmOgrEkle.MdiParent = this;
-            frmOgrEkle.Show();
-        }
+        
+        
 
         private void odaBilgisiToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -106,6 +83,21 @@ namespace YurtOtomasyonu
             FrmOgrenciListesi frmOgrenciListesi = new FrmOgrenciListesi();
             frmOgrenciListesi.MdiParent = this;
             frmOgrenciListesi.Show();
+        }
+
+        private void personelEkleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmKullaniciIslemleri frmKullanici = new FrmKullaniciIslemleri();
+            frmKullanici.MdiParent = this;
+            frmKullanici.Show();
+        }
+
+        private void personelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            FrmKullaniciIslemleri frmKullanici = new FrmKullaniciIslemleri();
+            frmKullanici.MdiParent = this;
+            frmKullanici.Show();
         }
     }
 }

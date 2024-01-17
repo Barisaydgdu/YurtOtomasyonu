@@ -72,7 +72,7 @@
             this.txtKullaniciSifre.Location = new System.Drawing.Point(290, 201);
             this.txtKullaniciSifre.Name = "txtKullaniciSifre";
             this.txtKullaniciSifre.Size = new System.Drawing.Size(161, 34);
-            this.txtKullaniciSifre.TabIndex = 4;
+            this.txtKullaniciSifre.TabIndex = 2;
             this.txtKullaniciSifre.UseSystemPasswordChar = true;
             // 
             // mtbKullaniciTC
@@ -81,7 +81,7 @@
             this.mtbKullaniciTC.Mask = "00000000000";
             this.mtbKullaniciTC.Name = "mtbKullaniciTC";
             this.mtbKullaniciTC.Size = new System.Drawing.Size(161, 34);
-            this.mtbKullaniciTC.TabIndex = 5;
+            this.mtbKullaniciTC.TabIndex = 1;
             this.mtbKullaniciTC.ValidatingType = typeof(int);
             // 
             // button1
@@ -89,7 +89,7 @@
             this.button1.Location = new System.Drawing.Point(327, 256);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(124, 49);
-            this.button1.TabIndex = 6;
+            this.button1.TabIndex = 3;
             this.button1.Text = "Giriş Yap";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);

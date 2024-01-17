@@ -44,24 +44,36 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tblOdaTableAdapter = new YurtOtomasyonu.YurtOtomasyonDataSetTableAdapters.tblOdaTableAdapter();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblOdaUyari = new System.Windows.Forms.Label();
             this.txtOgrOdaNo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnPKaydet = new System.Windows.Forms.Button();
             this.mtbOgrEkleTC = new System.Windows.Forms.MaskedTextBox();
             this.lblTC = new System.Windows.Forms.Label();
-            this.lblOdaUyari = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtOdaNo = new System.Windows.Forms.TextBox();
+            this.btnOdaSorgu = new System.Windows.Forms.Button();
+            this.tblPersonelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tblOgrenciBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tblOgrenciTableAdapter = new YurtOtomasyonu.YurtOtomasyonDataSetTableAdapters.tblOgrenciTableAdapter();
+            this.tblPersonelTableAdapter = new YurtOtomasyonu.YurtOtomasyonDataSetTableAdapters.tblPersonelTableAdapter();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblOdaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yurtOtomasyonDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yurtOtomasyonDataSet)).BeginInit();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tblPersonelBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblOgrenciBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Location = new System.Drawing.Point(89, 99);
+            this.groupBox1.Location = new System.Drawing.Point(31, 86);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(607, 387);
             this.groupBox1.TabIndex = 0;
@@ -182,12 +194,20 @@
             this.groupBox2.Controls.Add(this.btnPKaydet);
             this.groupBox2.Controls.Add(this.mtbOgrEkleTC);
             this.groupBox2.Controls.Add(this.lblTC);
-            this.groupBox2.Location = new System.Drawing.Point(180, 492);
+            this.groupBox2.Location = new System.Drawing.Point(31, 501);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(391, 223);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Öğrenci Kayıt";
+            // 
+            // lblOdaUyari
+            // 
+            this.lblOdaUyari.AutoSize = true;
+            this.lblOdaUyari.Location = new System.Drawing.Point(212, 173);
+            this.lblOdaUyari.Name = "lblOdaUyari";
+            this.lblOdaUyari.Size = new System.Drawing.Size(0, 25);
+            this.lblOdaUyari.TabIndex = 19;
             // 
             // txtOgrOdaNo
             // 
@@ -233,13 +253,62 @@
             this.lblTC.TabIndex = 0;
             this.lblTC.Text = "TC NO:";
             // 
-            // lblOdaUyari
+            // groupBox3
             // 
-            this.lblOdaUyari.AutoSize = true;
-            this.lblOdaUyari.Location = new System.Drawing.Point(212, 173);
-            this.lblOdaUyari.Name = "lblOdaUyari";
-            this.lblOdaUyari.Size = new System.Drawing.Size(0, 25);
-            this.lblOdaUyari.TabIndex = 19;
+            this.groupBox3.Controls.Add(this.dataGridView3);
+            this.groupBox3.Location = new System.Drawing.Point(655, 86);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(368, 306);
+            this.groupBox3.TabIndex = 9;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "groupBox3";
+            // 
+            // txtOdaNo
+            // 
+            this.txtOdaNo.Location = new System.Drawing.Point(684, 424);
+            this.txtOdaNo.Name = "txtOdaNo";
+            this.txtOdaNo.Size = new System.Drawing.Size(125, 34);
+            this.txtOdaNo.TabIndex = 16;
+            // 
+            // btnOdaSorgu
+            // 
+            this.btnOdaSorgu.Location = new System.Drawing.Point(844, 424);
+            this.btnOdaSorgu.Name = "btnOdaSorgu";
+            this.btnOdaSorgu.Size = new System.Drawing.Size(144, 35);
+            this.btnOdaSorgu.TabIndex = 15;
+            this.btnOdaSorgu.Text = "SORGULA";
+            this.btnOdaSorgu.UseVisualStyleBackColor = true;
+            this.btnOdaSorgu.Click += new System.EventHandler(this.btnOdaSorgu_Click);
+            // 
+            // tblPersonelBindingSource
+            // 
+            this.tblPersonelBindingSource.DataMember = "tblPersonel";
+            this.tblPersonelBindingSource.DataSource = this.yurtOtomasyonDataSetBindingSource;
+            // 
+            // tblOgrenciBindingSource
+            // 
+            this.tblOgrenciBindingSource.DataMember = "tblOgrenci";
+            this.tblOgrenciBindingSource.DataSource = this.yurtOtomasyonDataSetBindingSource;
+            // 
+            // tblOgrenciTableAdapter
+            // 
+            this.tblOgrenciTableAdapter.ClearBeforeFill = true;
+            // 
+            // tblPersonelTableAdapter
+            // 
+            this.tblPersonelTableAdapter.ClearBeforeFill = true;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView3.Location = new System.Drawing.Point(3, 30);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowHeadersWidth = 51;
+            this.dataGridView3.RowTemplate.Height = 24;
+            this.dataGridView3.Size = new System.Drawing.Size(362, 273);
+            this.dataGridView3.TabIndex = 10;
+            this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
             // 
             // FrmOdaBilgileri
             // 
@@ -247,8 +316,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.CadetBlue;
-            this.ClientSize = new System.Drawing.Size(765, 741);
+            this.ClientSize = new System.Drawing.Size(1101, 828);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.txtOdaNo);
             this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.btnOdaSorgu);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblKacBos);
             this.Controls.Add(this.lblBosOda);
@@ -268,6 +340,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.yurtOtomasyonDataSet)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tblPersonelBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblOgrenciBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,5 +372,13 @@
         private System.Windows.Forms.MaskedTextBox mtbOgrEkleTC;
         private System.Windows.Forms.Label lblTC;
         private System.Windows.Forms.Label lblOdaUyari;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.BindingSource tblOgrenciBindingSource;
+        private YurtOtomasyonDataSetTableAdapters.tblOgrenciTableAdapter tblOgrenciTableAdapter;
+        private System.Windows.Forms.Button btnOdaSorgu;
+        private System.Windows.Forms.TextBox txtOdaNo;
+        private System.Windows.Forms.BindingSource tblPersonelBindingSource;
+        private YurtOtomasyonDataSetTableAdapters.tblPersonelTableAdapter tblPersonelTableAdapter;
+        private System.Windows.Forms.DataGridView dataGridView3;
     }
 }

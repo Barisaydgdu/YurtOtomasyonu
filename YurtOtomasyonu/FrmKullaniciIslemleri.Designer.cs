@@ -1,6 +1,6 @@
 ﻿namespace YurtOtomasyonu
 {
-    partial class FrmPersonelIslemleri
+    partial class FrmKullaniciIslemleri
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPersonelIslemleri));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmKullaniciIslemleri));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tblRolBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -53,11 +53,24 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tblRolTableAdapter = new YurtOtomasyonu.YurtOtomasyonDataSetTableAdapters.tblRolTableAdapter();
+            this.tblOdaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tblOdaTableAdapter = new YurtOtomasyonu.YurtOtomasyonDataSetTableAdapters.tblOdaTableAdapter();
+            this.tblRolBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.fKtblKullanicitblRolBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tblKullaniciTableAdapter = new YurtOtomasyonu.YurtOtomasyonDataSetTableAdapters.tblKullaniciTableAdapter();
+            this.yurtOtomasyonDataSet1 = new YurtOtomasyonu.YurtOtomasyonDataSet1();
+            this.tblRolBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.tblRolTableAdapter1 = new YurtOtomasyonu.YurtOtomasyonDataSet1TableAdapters.tblRolTableAdapter();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblRolBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yurtOtomasyonDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblOdaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblRolBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKtblKullanicitblRolBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yurtOtomasyonDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblRolBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -85,11 +98,10 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Kullanıcı Kayıt";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // comboBox1
             // 
-            this.comboBox1.DataSource = this.tblRolBindingSource;
+            this.comboBox1.DataSource = this.tblRolBindingSource2;
             this.comboBox1.DisplayMember = "RollAd";
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(184, 336);
@@ -97,6 +109,7 @@
             this.comboBox1.Size = new System.Drawing.Size(193, 33);
             this.comboBox1.TabIndex = 8;
             this.comboBox1.ValueMember = "RolID";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // tblRolBindingSource
             // 
@@ -123,7 +136,6 @@
             this.label2.Size = new System.Drawing.Size(166, 25);
             this.label2.TabIndex = 19;
             this.label2.Text = "DOĞUM YILI:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -156,7 +168,7 @@
             this.btnPKaydet.Location = new System.Drawing.Point(217, 436);
             this.btnPKaydet.Name = "btnPKaydet";
             this.btnPKaydet.Size = new System.Drawing.Size(144, 35);
-            this.btnPKaydet.TabIndex = 14;
+            this.btnPKaydet.TabIndex = 9;
             this.btnPKaydet.Text = "KAYDET";
             this.btnPKaydet.UseVisualStyleBackColor = true;
             this.btnPKaydet.Click += new System.EventHandler(this.btnPKaydet_Click);
@@ -192,6 +204,7 @@
             this.mtbUserMail.Name = "mtbUserMail";
             this.mtbUserMail.Size = new System.Drawing.Size(193, 34);
             this.mtbUserMail.TabIndex = 6;
+            this.mtbUserMail.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mtbUserMail_MaskInputRejected);
             // 
             // lblMail
             // 
@@ -246,7 +259,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(701, 64);
+            this.pictureBox1.Location = new System.Drawing.Point(701, 85);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(213, 203);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -267,7 +280,44 @@
             // 
             this.tblRolTableAdapter.ClearBeforeFill = true;
             // 
-            // FrmPersonelIslemleri
+            // tblOdaBindingSource
+            // 
+            this.tblOdaBindingSource.DataMember = "tblOda";
+            this.tblOdaBindingSource.DataSource = this.yurtOtomasyonDataSet;
+            // 
+            // tblOdaTableAdapter
+            // 
+            this.tblOdaTableAdapter.ClearBeforeFill = true;
+            // 
+            // tblRolBindingSource1
+            // 
+            this.tblRolBindingSource1.DataMember = "tblRol";
+            this.tblRolBindingSource1.DataSource = this.yurtOtomasyonDataSet;
+            // 
+            // fKtblKullanicitblRolBindingSource
+            // 
+            this.fKtblKullanicitblRolBindingSource.DataMember = "FK_tblKullanici_tblRol";
+            this.fKtblKullanicitblRolBindingSource.DataSource = this.tblRolBindingSource1;
+            // 
+            // tblKullaniciTableAdapter
+            // 
+            this.tblKullaniciTableAdapter.ClearBeforeFill = true;
+            // 
+            // yurtOtomasyonDataSet1
+            // 
+            this.yurtOtomasyonDataSet1.DataSetName = "YurtOtomasyonDataSet1";
+            this.yurtOtomasyonDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tblRolBindingSource2
+            // 
+            this.tblRolBindingSource2.DataMember = "tblRol";
+            this.tblRolBindingSource2.DataSource = this.yurtOtomasyonDataSet1;
+            // 
+            // tblRolTableAdapter1
+            // 
+            this.tblRolTableAdapter1.ClearBeforeFill = true;
+            // 
+            // FrmKullaniciIslemleri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -278,15 +328,20 @@
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Margin = new System.Windows.Forms.Padding(5);
-            this.Name = "FrmPersonelIslemleri";
+            this.Name = "FrmKullaniciIslemleri";
             this.Text = "FrmPersonelIslemleri";
-            this.Load += new System.EventHandler(this.FrmPersonelIslemleri_Load);
+            this.Load += new System.EventHandler(this.FrmKullaniciIslemleri_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblRolBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.yurtOtomasyonDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblOdaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblRolBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKtblKullanicitblRolBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yurtOtomasyonDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblRolBindingSource2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -316,5 +371,13 @@
         private YurtOtomasyonDataSet yurtOtomasyonDataSet;
         private System.Windows.Forms.BindingSource tblRolBindingSource;
         private YurtOtomasyonDataSetTableAdapters.tblRolTableAdapter tblRolTableAdapter;
+        private System.Windows.Forms.BindingSource tblOdaBindingSource;
+        private YurtOtomasyonDataSetTableAdapters.tblOdaTableAdapter tblOdaTableAdapter;
+        private System.Windows.Forms.BindingSource tblRolBindingSource1;
+        private System.Windows.Forms.BindingSource fKtblKullanicitblRolBindingSource;
+        private YurtOtomasyonDataSetTableAdapters.tblKullaniciTableAdapter tblKullaniciTableAdapter;
+        private YurtOtomasyonDataSet1 yurtOtomasyonDataSet1;
+        private System.Windows.Forms.BindingSource tblRolBindingSource2;
+        private YurtOtomasyonDataSet1TableAdapters.tblRolTableAdapter tblRolTableAdapter1;
     }
 }

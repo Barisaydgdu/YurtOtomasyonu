@@ -34,16 +34,13 @@
             this.ödemeSayfasıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnPersonel = new System.Windows.Forms.MenuStrip();
             this.personelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.öğrenciEkleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.odaBilgisiToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.yetkiliSayfasıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmOgrenciEkle = new System.Windows.Forms.ToolStripMenuItem();
+            this.öğrenciLİstesiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.personelEkleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.odaBilgisiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.raporlarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnYetkili = new System.Windows.Forms.MenuStrip();
             this.öğrenciListesiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.öğrenciLİstesiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnOgrenci.SuspendLayout();
             this.mnPersonel.SuspendLayout();
             this.mnYetkili.SuspendLayout();
@@ -86,7 +83,6 @@
             this.mnPersonel.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.mnPersonel.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.personelToolStripMenuItem,
-            this.öğrenciEkleToolStripMenuItem,
             this.odaBilgisiToolStripMenuItem2,
             this.öğrenciLİstesiToolStripMenuItem});
             this.mnPersonel.Location = new System.Drawing.Point(0, 30);
@@ -99,15 +95,9 @@
             // personelToolStripMenuItem
             // 
             this.personelToolStripMenuItem.Name = "personelToolStripMenuItem";
-            this.personelToolStripMenuItem.Size = new System.Drawing.Size(128, 24);
-            this.personelToolStripMenuItem.Text = "Personel Sayfası";
-            // 
-            // öğrenciEkleToolStripMenuItem
-            // 
-            this.öğrenciEkleToolStripMenuItem.Name = "öğrenciEkleToolStripMenuItem";
-            this.öğrenciEkleToolStripMenuItem.Size = new System.Drawing.Size(106, 24);
-            this.öğrenciEkleToolStripMenuItem.Text = "Öğrenci Ekle";
-            this.öğrenciEkleToolStripMenuItem.Click += new System.EventHandler(this.öğrenciEkleToolStripMenuItem_Click);
+            this.personelToolStripMenuItem.Size = new System.Drawing.Size(135, 24);
+            this.personelToolStripMenuItem.Text = "Kullancı İşlemleri";
+            this.personelToolStripMenuItem.Click += new System.EventHandler(this.personelToolStripMenuItem_Click);
             // 
             // odaBilgisiToolStripMenuItem2
             // 
@@ -116,27 +106,18 @@
             this.odaBilgisiToolStripMenuItem2.Text = "Oda Bilgisi";
             this.odaBilgisiToolStripMenuItem2.Click += new System.EventHandler(this.odaBilgisiToolStripMenuItem2_Click);
             // 
-            // yetkiliSayfasıToolStripMenuItem
+            // öğrenciLİstesiToolStripMenuItem
             // 
-            this.yetkiliSayfasıToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmOgrenciEkle});
-            this.yetkiliSayfasıToolStripMenuItem.Name = "yetkiliSayfasıToolStripMenuItem";
-            this.yetkiliSayfasıToolStripMenuItem.Size = new System.Drawing.Size(106, 24);
-            this.yetkiliSayfasıToolStripMenuItem.Text = "Öğrenci Ekle";
-            this.yetkiliSayfasıToolStripMenuItem.Click += new System.EventHandler(this.yetkiliSayfasıToolStripMenuItem_Click);
-            // 
-            // tsmOgrenciEkle
-            // 
-            this.tsmOgrenciEkle.Name = "tsmOgrenciEkle";
-            this.tsmOgrenciEkle.Size = new System.Drawing.Size(175, 26);
-            this.tsmOgrenciEkle.Text = "Öğrenci Ekle";
-            this.tsmOgrenciEkle.Click += new System.EventHandler(this.tsmOgrenciEkle_Click);
+            this.öğrenciLİstesiToolStripMenuItem.Name = "öğrenciLİstesiToolStripMenuItem";
+            this.öğrenciLİstesiToolStripMenuItem.Size = new System.Drawing.Size(119, 24);
+            this.öğrenciLİstesiToolStripMenuItem.Text = "Öğrenci Lİstesi";
+            this.öğrenciLİstesiToolStripMenuItem.Click += new System.EventHandler(this.öğrenciLİstesiToolStripMenuItem_Click);
             // 
             // personelEkleToolStripMenuItem
             // 
             this.personelEkleToolStripMenuItem.Name = "personelEkleToolStripMenuItem";
-            this.personelEkleToolStripMenuItem.Size = new System.Drawing.Size(109, 24);
-            this.personelEkleToolStripMenuItem.Text = "Personel Ekle";
+            this.personelEkleToolStripMenuItem.Size = new System.Drawing.Size(139, 24);
+            this.personelEkleToolStripMenuItem.Text = "Kullanıcı İşlemleri";
             this.personelEkleToolStripMenuItem.Click += new System.EventHandler(this.personelEkleToolStripMenuItem_Click);
             // 
             // odaBilgisiToolStripMenuItem
@@ -157,7 +138,6 @@
             // 
             this.mnYetkili.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.mnYetkili.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.yetkiliSayfasıToolStripMenuItem,
             this.personelEkleToolStripMenuItem,
             this.odaBilgisiToolStripMenuItem,
             this.raporlarToolStripMenuItem,
@@ -175,13 +155,6 @@
             this.öğrenciListesiToolStripMenuItem.Size = new System.Drawing.Size(119, 24);
             this.öğrenciListesiToolStripMenuItem.Text = "Öğrenci Listesi";
             this.öğrenciListesiToolStripMenuItem.Click += new System.EventHandler(this.öğrenciListesiToolStripMenuItem_Click);
-            // 
-            // öğrenciLİstesiToolStripMenuItem
-            // 
-            this.öğrenciLİstesiToolStripMenuItem.Name = "öğrenciLİstesiToolStripMenuItem";
-            this.öğrenciLİstesiToolStripMenuItem.Size = new System.Drawing.Size(119, 24);
-            this.öğrenciLİstesiToolStripMenuItem.Text = "Öğrenci Lİstesi";
-            this.öğrenciLİstesiToolStripMenuItem.Click += new System.EventHandler(this.öğrenciLİstesiToolStripMenuItem_Click);
             // 
             // FrmAna
             // 
@@ -220,10 +193,7 @@
         private System.Windows.Forms.ToolStripMenuItem personelToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem odaBilgisiToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem ödemeSayfasıToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem öğrenciEkleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem odaBilgisiToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem yetkiliSayfasıToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tsmOgrenciEkle;
         private System.Windows.Forms.ToolStripMenuItem personelEkleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem odaBilgisiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem raporlarToolStripMenuItem;

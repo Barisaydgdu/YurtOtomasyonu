@@ -31,5 +31,10 @@ namespace YurtOtomasyonu
         {
 
         }
+
+        private void chart1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
